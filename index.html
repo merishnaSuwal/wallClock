@@ -92,12 +92,13 @@
     }
   </style>
 
-  
+  <audio class="tick" src="sounds/tick.mp3" autoplay></audio>
   <script>
   	const secondHand= document.querySelector('.second-hand');
   	const minuteHand= document.querySelector('.min-hand');
   	const hourHand= document.querySelector('.hour-hand');
-   
+    const audioTick = document.querySelector('.tick');
+  	
     function dateset() {
   		const curr = new Date();
   		const second= curr.getSeconds();
@@ -115,6 +116,12 @@
     setInterval(dateset,1000);
     dateset();
 
+    function timeSkip(){
+      audioTick.currentTime = 0.1;
+    } 
+
+  	setInterval(timeSkip,1000);
+    timeSkip();
     
   </script>
 </body>
